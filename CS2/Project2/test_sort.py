@@ -22,9 +22,9 @@ ALGORITHMS = [
         ("Builtin sort",    "Black",  sorted )
 ]
 
-REPETITIONS  = 50
+REPETITIONS  = 100
 
-TEST_SIZES  = [ 3, 10, 30, 100, 300]
+TEST_SIZES  = [ 3, 10, 30, 100, 300, 1000, 3000, 10000, 30000]
 
 TEST_ARRAYS = [
     ( size, [ create_random_array(size) for i in range(REPETITIONS) ] )
