@@ -23,8 +23,10 @@ def sort_inplace(array):
     """ Inplace bubblesort sort.
     modifies the input array directly
     """
-    # TODO (OPTIONAL): implement bubblesort sort
-    # replace the lines below with your own code
-    list.sort(array)
+    n = len(array)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if array[j] > array[j+1]:
+                swap(array, j, j+1)
     return array
 

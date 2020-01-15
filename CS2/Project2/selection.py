@@ -29,8 +29,12 @@ def sort_inplace(array):
     """ Inplace selection sort.
     modifies the input array directly
     """
-    # TODO (OPTIONAL): implement selection sort
-    # replace the lines below with your own code
-    list.sort(array)
+    n = len(array)
+    for i in range(n-1):
+        minidx = i
+        for j in range(i, n):
+            if array[minidx] > array[j]:
+                minidx = j
+        swap(array, i, minidx)
     return array
 

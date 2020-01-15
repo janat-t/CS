@@ -14,17 +14,17 @@ import quicksort
 
 ALGORITHMS = [
         # Algorithm name,   Color,    Algorithm function
-#        ("Selection sort",  "Blue",   selection.sort ),
+        ("Selection sort",  "Blue",   selection.sort ),
         ("Insertion sort",  "Cyan",   insertion.sort ),
-#        ("Bubble sort",     "Green",  bubblesort.sort ),
+        ("Bubble sort",     "Green",  bubblesort.sort ),
         ("Quicksort",       "Orange", quicksort.sort ),
         ("Merge sort",      "Red",    mergesort.sort ),
         ("Builtin sort",    "Black",  sorted )
 ]
 
-REPETITIONS  = 100
+REPETITIONS  = 10
 
-TEST_SIZES  = [ 3, 10, 30, 100, 300, 1000]
+TEST_SIZES  = [ 3, 10, 30, 100, 300, 1000, 3000]
 
 TEST_ARRAYS = [
     ( size, [ create_random_array(size) for i in range(REPETITIONS) ] )
