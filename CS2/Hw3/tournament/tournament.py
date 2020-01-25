@@ -19,11 +19,11 @@ STRENGTH = [79, 79, 22, 85, 98, 59, 56, 60, 47, 53, 69, 20, 79, 11, 58, 30, 26, 
 def compute_winner(player1, player2):
     """ Compute the winner between two players.
     
-    This function is deterministic.
-    The strongest player always wins against a weaker opponent.
-    In case of tie (same strength), the first player wins.
+    This function is non-deterministic.
     """
-    if STRENGTH[player1] >= STRENGTH[player2]:
+    s1 = STRENGTH[player1]
+    s2 = STRENGTH[player2]
+    if random.random() < s1 / (s1 + s2):
         return player1
     else:
         return player2
