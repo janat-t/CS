@@ -11,6 +11,7 @@ import bubblesort
 import insertion
 import mergesort
 import quicksort
+import heapsort
 
 ALGORITHMS = [
         # Algorithm name,   Color,    Algorithm function
@@ -19,6 +20,7 @@ ALGORITHMS = [
         ("Bubble sort",     "Green",  bubblesort.sort ),
         ("Quicksort",       "Orange", quicksort.sort ),
         ("Merge sort",      "Red",    mergesort.sort ),
+        ("Heap sort",      "Purple",  heapsort.sort ),
         ("Builtin sort",    "Black",  sorted )
 ]
 

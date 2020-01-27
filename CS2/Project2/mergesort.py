@@ -78,32 +78,6 @@ def merge(a, b):
 			res[i] = b[indexb]
 			indexb += 1
 	return res
-
-def myMerge(a, b):
-	i = 0
-	j = 0
-	idx = 0
-	m = len(a)
-	n = len(b)
-	res = [0] * (m + n)
-	while i < m and j < n:
-		if a[i] < b[j]:
-			res[idx] = a[i]
-			i += 1
-		else:
-			res[idx] = b[j]
-			j += 1
-		idx += 1
-	while i < m:
-		res[idx] = a[i]
-		idx += 1
-		i += 1
-	while j < n:
-		res[idx] = b[j]
-		idx += 1
-		j += 1
-	return res
-
 	
 	
 def sort(array):
@@ -123,4 +97,4 @@ def sort(array):
 	mid = n // 2
 	left = sort(array[:mid])
 	right = sort(array[mid:])
-	return myMerge(left, right)
+	return merge(left, right)
