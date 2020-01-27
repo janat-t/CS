@@ -18,7 +18,12 @@ def R(idx):
 	return 2*idx+2
 
 def shiftdown(idx, array):
+	swap = idx
 	if R(idx) < len(array):
+		if array[idx] > min(array[L(idx)], array[R(idx)]):
+			swap = L(idx) if array[L(idx)]<array[R(idx)] else R(idx)
+
+
 		
 
 
@@ -36,3 +41,4 @@ def sort(array):
 	heap = heapify(array)
 	res = [0]*n
 	for i in range(n):
+		shiftdown(i, array)
