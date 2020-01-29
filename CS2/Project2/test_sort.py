@@ -15,16 +15,16 @@ import heapsort
 
 ALGORITHMS = [
         # Algorithm name,   Color,    Algorithm function
-        ("Selection sort",  "Blue",   selection.sort ),
-        ("Insertion sort",  "Cyan",   insertion.sort ),
         ("Bubble sort",     "Green",  bubblesort.sort ),
-        ("Quicksort",       "Orange", quicksort.sort ),
+        ("Insertion sort",  "Cyan",   insertion.sort ),
+        ("Selection sort",  "Blue",   selection.sort ),
+        ("Heap sort",       "Purple", heapsort.sort ),
         ("Merge sort",      "Red",    mergesort.sort ),
-        ("Heap sort",      "Purple",  heapsort.sort ),
+        ("Quicksort",       "Orange", quicksort.sort ),
         ("Builtin sort",    "Black",  sorted )
 ]
 
-REPETITIONS  = 20
+REPETITIONS  = 25   
 
 TEST_SIZES  = [ 3, 10, 30, 100, 300, 1000, 3000, 10000, 30000]
 
@@ -93,6 +93,6 @@ ax.set(xlabel='array size', ylabel='running time [ms]',
        title='Running time of sorting algorithms')
 ax.legend()
 ax.grid()
-#fig.savefig("sort_comparison.pdf")
+fig.savefig("nlogn_sort_comparison.pdf")
 plt.show()
 
