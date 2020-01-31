@@ -20,8 +20,8 @@ ALGORITHMS = [
         ("Selection sort",  "Blue",   selection.sort ),
         ("Heap sort",       "Purple", heapsort.sort ),
         ("Merge sort",      "Red",    mergesort.sort ),
-        ("Quicksort",       "Orange", quicksort.sort ),
-        ("Builtin sort",    "Black",  sorted )
+        ("Quick sort",      "Orange", quicksort.sort ),
+        # ("Builtin sort",    "Black",  sorted )
 ]
 
 REPETITIONS  = 25   
@@ -93,6 +93,6 @@ ax.set(xlabel='array size', ylabel='running time [ms]',
        title='Running time of sorting algorithms')
 ax.legend()
 ax.grid()
-fig.savefig("nlogn_sort_comparison.pdf")
+fig.savefig("sort_comparison.pdf")
 plt.show()
 
