@@ -1,3 +1,5 @@
+from sort_core import swap
+
 #
 # MERGE SORT
 #
@@ -18,19 +20,17 @@ def R(idx):
 	return 2*idx+2
 
 def shiftdown(idx, heap):
-	swap = idx
+	swp = idx
 	if R(idx) < len(heap):
 		if heap[idx] > min(heap[L(idx)], heap[R(idx)]):
-			swap = L(idx) if heap[L(idx)]<heap[R(idx)] else R(idx)
+			swp = L(idx) if heap[L(idx)]<heap[R(idx)] else R(idx)
 	elif L(idx) < len(heap):
 		if heap[idx] > heap[L(idx)]:
-			swap = L(idx)
-	if swap == idx:
+			swp = L(idx)
+	if swp == idx:
 		return
-	tmp = heap[idx]
-	heap[idx] = heap[swap]
-	heap[swap] = tmp
-	shiftdown(swap, heap)
+	swap(heap, idx, swp)
+	shiftdown(swp, heap)
 
 def pop(heap):
 	n = len(heap)
