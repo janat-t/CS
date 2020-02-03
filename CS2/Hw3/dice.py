@@ -2,7 +2,7 @@ import random  # Module needed to generate "random" numbers
 
 random.seed(123)
 
-def one_dice(nb_simulations):
+def two_dice(nb_simulations):
     """ Simulate throwing a 6-sided dice nb_simulations time
     Print the percentage of each possible value (2 to 12).
     """
