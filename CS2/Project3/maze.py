@@ -96,16 +96,16 @@ def BFSMaze(n, adjList, displayDetails=False):
         for c in lastVisitedCells:             # For each cell reached in the previous iteration
             for neigh in adjList[c]:           # look for all its neighbors and check if they have
                 if not visited[neigh]:         # have already been visited by the BFS
-                    XXXXXXX-TODO-XXXXXXX
-                    XXXXXXX-TODO-XXXXXXX
+                    nextVisitedCells.append(neigh)
+                    visited[neigh] = True
         if nextVisitedCells == []:
             # No new cells visited; it means that BFS is finished
             # All cells connected to the starting cell have been explored
             break  # Exit the loop
         else: # Not yet over, let's update the set (list) of visited cells in the current iteration
-            XXXXXXX-TODO-XXXXXXX
+            lastVisitedCells = nextVisitedCells
             if displayDetails:
-                print(f"After {step} iterations, the following cells are reachable:")
+                print(f"After {step} iterations, the following cells are reachable: {nextVisitedCells}")
                 printMaze(n, adjList, visited)
                 time.sleep(1)
     

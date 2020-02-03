@@ -2,7 +2,9 @@
 
 
 from maze import genRandMaze, BFSMaze # To access functions defined in the other file
+from tqdm import tqdm
 import matplotlib.pyplot as plt       # To plot graphics directly in python
+import numpy as np
 
 # YOU HAVE TO WRITE THIS FUNCTION
 def simulateFixedParameters(n, p, nbSimus):
@@ -11,11 +13,13 @@ def simulateFixedParameters(n, p, nbSimus):
         - Check if there is a path from S to G
         Return the percentage of success (success=there is path from S to G)
     """
-    ########################
-    ######### TODO #########
-    ########################
+    success_count = 0
+    for i in range(nbSimus):
+        maze = genRandMaze(n, p)
+        if BFSMaze(n, maze):
+            success_count += 1
 
-    return 0   # Of course you need to remove this “return 0”
+    return success_count / nbSimus * 100   # Of course you need to remove this “return 0”
 
 
 # You do *not* need to modify this function
@@ -25,7 +29,7 @@ def simulate(n, listP, nbSimus):
         Return the list of percentage of success for each value of p
     """
     results = []
-    for p in listP:
+    for p in tqdm(listP):
         results.append( simulateFixedParameters(n, p, nbSimus) )
     return results
 
@@ -36,10 +40,15 @@ if __name__ == "__main__":
     # to plot some nice curves
     
     # You can/should modify the values below
-    listP = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
-    data10 = simulate(10, listP, 5)
+    finest = 41
+    nbSimus = 10000
+    N = 10
+
+    listP = np.linspace(0.0, 1.0, finest)
+    data = simulate(N, listP, nbSimus)
     
     # Example of curve that you can obtain
     # Note: axis labels, title, ... are missing
     #       they should be added to have proper graphic
-    plt.plot(listP, data10)
+    plt.plot(listP, data)
+    plt.show()
