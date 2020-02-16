@@ -42,13 +42,24 @@ if __name__ == "__main__":
     # You can/should modify the values below
     finest = 4              # Finest of the graph (1, 2, 3, ...)
     nbSimus = 10000         # Number of Simulations
-    N = 10                  # Size of the maze
 
     listP = np.linspace(0.0, 1.0, finest * 10 + 1)
-    data = simulate(N, listP, nbSimus)
+    data02 = simulate( 2, listP, nbSimus)
+    data05 = simulate( 5, listP, nbSimus)
+    data10 = simulate(10, listP, nbSimus)
+    data20 = simulate(20, listP, nbSimus)
     
     # Example of curve that you can obtain
     # Note: axis labels, title, ... are missing
     #       they should be added to have proper graphic
-    plt.plot(listP, data)
+    fig, ax = plt.subplots()
+    ax.plot(listP, data02, label="N = 2")
+    ax.plot(listP, data05, label="N = 5")
+    ax.plot(listP, data10, label="N = 10")
+    ax.plot(listP, data20, label="N = 20")
+    legend = ax.legend(loc='upper right')
+    
+    plt.title("Relationship between Rate of Success and Probability of Wall")
+    plt.ylabel("Rate of Success (%)")
+    plt.xlabel("Probability of Wall (P)")
     plt.show()
