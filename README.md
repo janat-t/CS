@@ -1,2 +1,2 @@
-# Computer Science Course @ Tokyo Institute of Technology
+# Computer Courses @ Tokyo Institute of Technology
 Taerakul Janat
