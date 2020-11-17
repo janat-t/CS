@@ -1,0 +1,10 @@
+Data file gauss.dat 
+Number of equations and the number of r.h.s. vectors. 
+4 1 
+Matrix A:
+1.0 3.0 3.0 2.0
+2.0 1.0 -8.0 -1.0
+1.0 1.0 6.0 4.0
+1.0 6.0 5.0 2.0
+Load vector:
+1.0 1.0 1.0 1.0
