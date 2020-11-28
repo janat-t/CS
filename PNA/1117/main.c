@@ -2,21 +2,19 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#define ANS 0.78539816339
+#define ANS 44.723546267557865628157665111058656260226024578742563958198931614
 
 double dabs(double x){
     return x>0? x : -x;
 }
 
 double func(double x){
-    if(1.0-x*x<0.0)
-        return 0;
-    return sqrt(1.0-x*x);
+    return pow(2,x);
 }
 
 double trapzd(double (*func)(double), double a, double b, int n){
-    double x = 0.0;
-    double dx = 1.0/n;
+    double x = a;
+    double dx = (b-a)/n;
     double ans = 0.0;
     int i;
     for(i=0; i<n; ++i){
@@ -35,14 +33,14 @@ double montecarlo(double (*func)(double), double a, double b, int n){
         r = (double)(rand())/RAND_MAX;
         r *= b-a;
         r += a;
-        ans += func(r)/n;
+        ans += func(r)*(b-a)/n;
     }
     return ans;
 }
 
-int main(void){
-    float a = 0.0;
-    float b = 1.0;
+int main(){
+    double a = 0.0;
+    double b = 5.0;
     double s10, s100, s1000, s1000000;
     /* FILE *fp; */
 

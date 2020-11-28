@@ -1,3 +1,4 @@
+#include <stdio.h>
 #define IA 16807
 #define IM 2147483647
 #define AM (1.0/IM)
@@ -18,6 +19,18 @@ float ran0(long *idum)
 	*idum ^= MASK;
 	return ans;
 }
+
+int main(){
+    long a = 0;
+    printf("%ld %f\n",a ,ran0(&a));
+    printf("%ld %f\n",a ,ran0(&a));
+    printf("%ld %f\n",a ,ran0(&a));
+    printf("%ld %f\n",a ,ran0(&a));
+    printf("%ld %f\n",a ,ran0(&a));
+    printf("%ld %f\n",a ,ran0(&a));
+    return 0;
+}
+
 #undef IA
 #undef IM
 #undef AM
