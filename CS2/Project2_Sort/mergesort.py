@@ -31,30 +31,6 @@ def merge_rec(a, b):
 	return [b[0]] + merge_rec(a, b[1:])
 
 
-# 2018 version
-# ==> replaced with function below which is more clear (hoepefully)
-#def merge(a, b):
-#    """ Merge of two sorted arrays (iterative version)
-#    
-#    IN:  sorted arrays a and b
-#    OUT: merging of a and b into one sorted array
-#    """
-#    if not a or not b or a[-1] < b[0]:
-#        return a + b
-#    res = [ a[0] for i in range(len(a)+len(b)) ]
-#    next_a = 0
-#    last_a = len(a)-1
-#    last_b = len(b)-1
-#    for i in range(len(res)):
-#        next_b = i - next_a
-#        if (next_a > last_a) or ((next_b <= last_b) and (a[next_a] > b[next_b])):
-#            res[i] = b[next_b]
-#        else:
-#            res[i] = a[next_a]
-#            next_a += 1
-#    return res
-
-
 def merge(a, b):
 	""" Merge of two sorted arrays (iterative version)
 	
